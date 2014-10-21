@@ -1,30 +1,29 @@
-package com.zhili;
+package com.zhili.activity;
 
-import com.manager.UpdateManager;
-
-import android.support.v7.app.ActionBarActivity;
-import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainActivity extends ActionBarActivity {
+import com.zhili.R;
+import com.zhili.manager.UpdateManager;
+
+public class LoginActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        if (savedInstanceState == null) {
-            getSupportFragmentManager().beginTransaction()
-                    .add(R.id.container, new PlaceholderFragment())
-                    .commit();
-        }
-        UpdateManager mUpdateManager = new UpdateManager(MainActivity.this);
-        mUpdateManager.checkUpdateInfo(true);
+        
+        //RatingBar
+        setContentView(R.layout.login);
+        
+        UpdateManager mUpdateManager = new UpdateManager(LoginActivity.this);
+        mUpdateManager.checkUpdateInfo();
+        
     }
 
 
@@ -63,5 +62,6 @@ public class MainActivity extends ActionBarActivity {
             return rootView;
         }
     }
-
+    
+   
 }
