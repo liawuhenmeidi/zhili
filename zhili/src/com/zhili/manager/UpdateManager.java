@@ -27,27 +27,27 @@ import android.view.View;
 import android.widget.ProgressBar;
 
 public class UpdateManager {
-	 // Ó¦ÓÃ³ÌĞòContext
+	 // åº”ç”¨ç¨‹åºContext
 	 private Context mContext;
-	 // ÌáÊ¾ÏûÏ¢
-	 private String updateMsg = "ÓĞ×îĞÂµÄÈí¼ş°ü£¬ÇëÏÂÔØ£¡";
-	 // ÏÂÔØ°²×°°üµÄÍøÂçÂ·¾¶
+	 // æç¤ºæ¶ˆæ¯
+	 private String updateMsg = "æœ‰æœ€æ–°çš„è½¯ä»¶åŒ…ï¼Œè¯·ä¸‹è½½ï¼";
+	 // ä¸‹è½½å®‰è£…åŒ…çš„ç½‘ç»œè·¯å¾„
 	 //private String apkUrl = "http://softfile.3g.qq.com:8080/msoft/179/24659/43549/qq_hd_mini_1.4.apk";
 
-	 private HashMap<String, String> mHashMap; /* ±£´æ½âÎöµÄXMLĞÅÏ¢ */
-	 private Dialog noticeDialog;// ÌáÊ¾ÓĞÈí¼ş¸üĞÂµÄ¶Ô»°¿ò
-	 private Dialog downloadDialog;// ÏÂÔØ¶Ô»°¿ò
-	 private static final String savePath = "/sdcard/updatedemo/";// ±£´æapkµÄÎÄ¼ş¼Ğ
+	 private HashMap<String, String> mHashMap; /* ä¿å­˜è¯»å–çš„ç½‘ç»œä¿¡æ¯ */
+	 private Dialog noticeDialog;// æç¤ºæœ‰è½¯ä»¶æ›´æ–°çš„å¯¹è¯æ¡†
+	 private Dialog downloadDialog;// ä¸‹è½½å¯¹è¯æ¡†
+	 private static final String savePath = "/sdcard/updatedemo/";// ä¿å­˜apkçš„æ–‡ä»¶å¤¹
 	 private static final String saveFileName = savePath + "UpdateDemoRelease.apk";
-	 // ½ø¶ÈÌõÓëÍ¨ÖªUIË¢ĞÂµÄhandlerºÍmsg³£Á¿ 
+	 // è¿›åº¦æ¡ä¸é€šçŸ¥UIåˆ·æ–°çš„handlerå’Œmsgå¸¸é‡ 
 	 private ProgressBar mProgress;
 	 private static final int DOWN_UPDATE = 1;
 	 private static final int DOWN_OVER = 2;
-	 private int progress;// µ±Ç°½ø¶È
-	 private Thread downLoadThread; // ÏÂÔØÏß³Ì
-	 private boolean interceptFlag = false;// ÓÃ»§È¡ÏûÏÂÔØ
+	 private int progress;// å½“å‰è¿›åº¦
+	 private Thread downLoadThread; // ä¸‹è½½çº¿ç¨‹
+	 private boolean interceptFlag = false;// ç”¨æˆ·å–æ¶ˆä¸‹è½½
 	 
-	 // Í¨Öª´¦ÀíË¢ĞÂ½çÃæµÄhandler
+	 // é€šçŸ¥å¤„ç†åˆ·æ–°ç•Œé¢çš„handler
 	 private Handler mHandler = new Handler() {
 		  @SuppressLint("HandlerLeak")
 		  @Override
@@ -71,7 +71,7 @@ public class UpdateManager {
 	 }
 	 
 	 
-	 // ÏÔÊ¾¸üĞÂ³ÌĞò¶Ô»°¿ò£¬¹©Ö÷³ÌĞòµ÷ÓÃ
+	// æ˜¾ç¤ºæ›´æ–°ç¨‹åºå¯¹è¯æ¡†ï¼Œä¾›ä¸»ç¨‹åºè°ƒç”¨
 	 public void checkUpdateInfo() {
 		 if(isUpdate()){
 			 showNoticeDialog();
@@ -80,21 +80,21 @@ public class UpdateManager {
 	 }
 	 
 	 /**
-     * ¼ì²éÈí¼şÊÇ·ñÓĞ¸üĞÂ°æ±¾
+     * æ£€æŸ¥æ˜¯å¦éœ€è¦æ›´æ–°
      * 
      * @return
      */
     private boolean isUpdate()
     {
     	boolean flag = false;
-        // »ñÈ¡µ±Ç°Èí¼ş°æ±¾
+    	// æ˜¾ç¤ºæ›´æ–°ç¨‹åºå¯¹è¯æ¡†ï¼Œä¾›ä¸»ç¨‹åºè°ƒç”¨
         int versionCode = getVersionCode(mContext);
-        // °Ñversion.xml·Åµ½ÍøÂçÉÏ£¬È»ºó»ñÈ¡ÎÄ¼şĞÅÏ¢
+        // æŠŠversion.xmlæ”¾åˆ°ç½‘ç»œä¸Šï¼Œç„¶åè·å–æ–‡ä»¶ä¿¡æ¯
         //InputStream inStream = ParseXmlService.class.getClassLoader().getResourceAsStream("http://203.195.223.16:8080/zhili/zhiliMetaData.xml");
         try {
 			URL url = new URL("http://203.195.223.16:8080/zhili/zhiliMetaData.xml");
 			InputStream is = url.openStream();  
-			// ½âÎöXMLÎÄ¼ş¡£ ÓÉÓÚXMLÎÄ¼ş±È½ÏĞ¡£¬Òò´ËÊ¹ÓÃDOM·½Ê½½øĞĞ½âÎö
+			// è§£æXMLæ–‡ä»¶ã€‚ ç”±äºXMLæ–‡ä»¶æ¯”è¾ƒå°ï¼Œå› æ­¤ä½¿ç”¨DOMæ–¹å¼è¿›è¡Œè§£æ
 	        ParseXmlService service = new ParseXmlService();
 	        mHashMap = service.parseXml(is);
 		} catch (MalformedURLException e1) {
@@ -109,7 +109,7 @@ public class UpdateManager {
         if (null != mHashMap)
         {
             int serviceCode = Integer.valueOf(mHashMap.get("versionCode"));
-            // °æ±¾ÅĞ¶Ï
+         // ç‰ˆæœ¬åˆ¤æ–­
             if (serviceCode > versionCode)
             {
             	flag=true;
@@ -119,7 +119,7 @@ public class UpdateManager {
     }
     
     /**
-     * »ñÈ¡Èí¼ş°æ±¾ºÅ
+     * è·å–è½¯ä»¶ç‰ˆæœ¬å·
      * 
      * @param context
      * @return
@@ -129,7 +129,7 @@ public class UpdateManager {
         int versionCode = 0;
         try
         {
-            // »ñÈ¡Èí¼ş°æ±¾ºÅ£¬
+        	// è·å–è½¯ä»¶ç‰ˆæœ¬å·ï¼Œ
             versionCode = context.getPackageManager().getPackageInfo("com.zhili", 0).versionCode;
         } catch (NameNotFoundException e)
         {
@@ -141,20 +141,20 @@ public class UpdateManager {
 	 
 	 private void showNoticeDialog() {
 		  android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(
-		    mContext);// Builder£¬¿ÉÒÔÍ¨¹ı´ËbuilderÉèÖÃ¸Ä±äAleartDialogµÄÄ¬ÈÏµÄÖ÷ÌâÑùÊ½¼°ÊôĞÔÏà¹ØĞÅÏ¢
-		  builder.setTitle("Èí¼ş°æ±¾¸üĞÂ");
+		    mContext);// Builderï¼Œå¯ä»¥é€šè¿‡æ­¤builderè®¾ç½®æ”¹å˜AleartDialogçš„é»˜è®¤çš„ä¸»é¢˜æ ·å¼åŠå±æ€§ç›¸å…³ä¿¡æ¯
+		  builder.setTitle("è½¯ä»¶ç‰ˆæœ¬æ›´æ–°");
 		  builder.setMessage(updateMsg);
 		  
 		  
-		  builder.setPositiveButton("ÏÂÔØ", new OnClickListener() {
+		  builder.setPositiveButton("ï¿½ï¿½ï¿½ï¿½", new OnClickListener() {
 		   @Override
 		   public void onClick(DialogInterface dialog, int which) {
-		    dialog.dismiss();// µ±È¡Ïû¶Ô»°¿òºó½øĞĞ²Ù×÷Ò»¶¨µÄ´úÂë£¿È¡Ïû¶Ô»°¿ò
-		    showDownloadDialog();
+			   dialog.dismiss();// å½“å–æ¶ˆå¯¹è¯æ¡†åè¿›è¡Œæ“ä½œä¸€å®šçš„ä»£ç ï¼Ÿå–æ¶ˆå¯¹è¯æ¡†
+			   showDownloadDialog();
 		   }
 		  });
 		  
-		  builder.setNegativeButton("ÒÔºóÔÙËµ", new OnClickListener() {
+		  builder.setNegativeButton("ä»¥åå†è¯´", new OnClickListener() {
 		   @Override
 		   public void onClick(DialogInterface dialog, int which) {
 		    dialog.dismiss();
@@ -169,12 +169,12 @@ public class UpdateManager {
 	 
 	 protected void showDownloadDialog() {
 		  android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(mContext);
-		  builder.setTitle("Èí¼ş°æ±¾¸üĞÂ");
+		  builder.setTitle("è½¯ä»¶ç‰ˆæœ¬æ›´æ–°");
 		  final LayoutInflater inflater = LayoutInflater.from(mContext);
-		  View v = inflater.inflate(R.layout.progressbar, null);
+		  View v = inflater.inflate(R.layout.update_progressbar, null);
 		  mProgress = (ProgressBar) v.findViewById(R.id.progressbar);
-		  builder.setView(v);// ÉèÖÃ¶Ô»°¿òµÄÄÚÈİÎªÒ»¸öView
-		  builder.setNegativeButton("È¡Ïû", new OnClickListener() {
+		  builder.setView(v);// è®¾ç½®å¯¹è¯æ¡†çš„å†…å®¹ä¸ºä¸€ä¸ªView
+		  builder.setNegativeButton("å–æ¶ˆ", new OnClickListener() {
 		   @Override
 		   public void onClick(DialogInterface dialog, int which) {
 		    dialog.dismiss();
@@ -197,7 +197,7 @@ public class UpdateManager {
 		  }
 		  Intent i = new Intent(Intent.ACTION_VIEW);
 		  i.setDataAndType(Uri.parse("file://" + apkfile.toString()),
-		    "application/vnd.android.package-archive");// File.toString()»á·µ»ØÂ·¾¶ĞÅÏ¢
+		    "application/vnd.android.package-archive");// File.toString()ä¼šè¿”å›è·¯å¾„ä¿¡æ¯
 		  mContext.startActivity(i);
 	 }
 	 
@@ -225,15 +225,15 @@ public class UpdateManager {
 					     int numread = ins.read(buf);
 					     count += numread;
 					     progress = (int) (((float) count / length) * 100);
-					     // ÏÂÔØ½ø¶È
+					     // ä¸‹è½½è¿›åº¦
 					     mHandler.sendEmptyMessage(DOWN_UPDATE);
 					     if (numread <= 0) {
-						      // ÏÂÔØÍê³ÉÍ¨Öª°²×°
+					    	 // ä¸‹è½½å®Œæˆé€šçŸ¥å®‰è£…
 						      mHandler.sendEmptyMessage(DOWN_OVER);
 						      break;
 					     }
 					     outStream.write(buf, 0, numread);
-				    } while (!interceptFlag);// µã»÷È¡ÏûÍ£Ö¹ÏÂÔØ
+				    } while (!interceptFlag);// ç‚¹å‡»å–æ¶ˆåœæ­¢ä¸‹è½½
 				    
 				    outStream.close();
 				    ins.close();
