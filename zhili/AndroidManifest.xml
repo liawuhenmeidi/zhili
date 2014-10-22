@@ -27,6 +27,11 @@
             </intent-filter>
         </activity>
         
+        <activity
+            android:name="com.zhili.activity.MainConsoleActivity"
+            android:label="@string/mainconsoleactivity_activityname" >
+        </activity>
+        
 
     </application>
 

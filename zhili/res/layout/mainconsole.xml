@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    android:background="@color/mainconsoleactivity_background"
+    tools:context="com.zhili.activity.LoginActivity"
+    tools:ignore="MergeRootFrame" >
+    
+    <TextView
+        android:id="@+id/mainconsoleactivity_signin"
+        android:background="@drawable/setbar_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="@string/mainconsoleactivity_signin" />
+    
+    <TextView 
+        android:id="@+id/mainconsoleactivity_createorder"
+        android:background="@drawable/setbar_bg"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_alignRight="@id/mainconsoleactivity_signin"
+        android:layout_alignLeft="@id/mainconsoleactivity_signin"
+        android:layout_below="@id/mainconsoleactivity_signin"
+        android:text="@string/mainconsoleactivity_createorder" />
+
+    
+     <TextView 
+        android:id="@+id/mainconsoleactivity_vieworder"
+       	android:background="@drawable/setbar_bg"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_alignRight="@id/mainconsoleactivity_createorder"
+        android:layout_alignLeft="@id/mainconsoleactivity_createorder"
+        android:layout_below="@id/mainconsoleactivity_createorder"
+        android:text="@string/mainconsoleactivity_vieworder" />
+        />
+
+    
+    
+</RelativeLayout>
+

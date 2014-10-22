@@ -21,6 +21,7 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -146,7 +147,7 @@ public class UpdateManager {
 		  builder.setMessage(updateMsg);
 		  
 		  
-		  builder.setPositiveButton("����", new OnClickListener() {
+		  builder.setPositiveButton("下载", new OnClickListener() {
 		   @Override
 		   public void onClick(DialogInterface dialog, int which) {
 			   dialog.dismiss();// 当取消对话框后进行操作一定的代码？取消对话框
@@ -205,8 +206,8 @@ public class UpdateManager {
 	 private Runnable mdownApkRunnable = new Runnable() {
 		  @Override
 		  public void run() {
-			   URL url;
-			   try {
+			  URL url;
+			  try {
 				    url = new URL(mHashMap.get("url"));
 				    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 				    conn.connect();

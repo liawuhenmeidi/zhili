@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    
+    <!-- loginactivity -->
+    <color name="loginactivity_background">#FFFACD</color>
+    
+    <!-- mainconsoleactivity -->
+    <color name="mainconsoleactivity_background">#EEEED1</color>
+    
+
+</resources>
