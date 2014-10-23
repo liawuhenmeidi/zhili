@@ -32,6 +32,26 @@
             android:label="@string/mainconsoleactivity_activityname" >
         </activity>
         
+        <activity
+            android:name="com.zhili.activity.ViewOrderActivity"
+            android:label="@string/vieworderactivity_activityname" >
+        </activity>
+        
+        <activity
+            android:name="com.zhili.activity.OrderDetailActivity"
+            android:label="@string/orderdetailactivity_activityname" >
+        </activity>
+        
+        <activity
+            android:name="com.zhili.activity.CreateOrderActivity"
+            android:label="@string/createoderactivity_activityname" >
+        </activity>
+        
+        <activity
+            android:name="com.zhili.activity.SigninActivity"
+            android:label="@string/signinactivity_activityname" >
+        </activity>
+        
 
     </application>
 
