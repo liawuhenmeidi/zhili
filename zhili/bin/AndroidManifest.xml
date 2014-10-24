@@ -40,7 +40,11 @@
         <activity
             android:name="com.zhili.activity.LoginActivity"
             android:label="@string/loginactivity_activityname" >
-           
+           <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         
         <activity
@@ -66,11 +70,6 @@
         <activity
             android:name="com.zhili.activity.SigninActivity"
             android:label="@string/signinactivity_activityname" >
-             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         
 

@@ -8,18 +8,20 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.zhili.R;
+import com.zhili.manager.DataManager;
 import com.zhili.manager.NetDataManager;
 import com.zhili.manager.UpdateManager;
 
 public class LoginActivity extends ActionBarActivity {
 
+	DataManager dataManager = DataManager.getInstance();
 	Button confirmButton;
 	EditText usernameTextView;
 	EditText passwordTextView;
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,11 @@ public class LoginActivity extends ActionBarActivity {
         confirmButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				boolean login = NetDataManager.getStaticInstance().sendLoginRequest(usernameTextView.getText().toString(), passwordTextView.getText().toString());
+
+				dataManager.put("username",usernameTextView.getText().toString());
+				dataManager.put("password",passwordTextView.getText().toString());
+				dataManager.put("urlParam", "?username="+usernameTextView.getText().toString()+"&password="+passwordTextView.getText().toString());
+				boolean login = NetDataManager.getStaticInstance().sendLoginRequest((String)dataManager.get("username"),(String)dataManager.get("password"));
 				if(login){
 					Intent i = new Intent(LoginActivity.this,MainConsoleActivity.class);
 					startActivity(i);

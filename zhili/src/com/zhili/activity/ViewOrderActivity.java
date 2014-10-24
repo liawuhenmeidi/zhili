@@ -7,12 +7,14 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.webkit.WebView;
 
+import com.zhili.manager.DataManager;
 import com.zhili.manager.NetDataManager;
 
 public class ViewOrderActivity extends ActionBarActivity {
 
 	WebView webview;
-    
+	DataManager dataManager = DataManager.getInstance();
+	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,7 +25,7 @@ public class ViewOrderActivity extends ActionBarActivity {
         //start();
         webview = new WebView(this); 
         webview.getSettings().setJavaScriptEnabled(true); 
-        webview.loadUrl(NetDataManager.getBaseURL() + "/meidiserver/user/serch_list.jsp");
+        webview.loadUrl(NetDataManager.getBaseURL() + "/meidiserver/androidSupport/serch_list.jsp" + (String)dataManager.get("urlParam"));
         setContentView(webview);
     }
 

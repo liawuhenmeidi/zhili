@@ -22,12 +22,14 @@ import android.view.ViewGroup;
 import android.webkit.WebView;
 
 import com.zhili.R;
+import com.zhili.manager.DataManager;
 import com.zhili.manager.NetDataManager;
 import com.zhili.manager.UpdateManager;
 
 public class CreateOrderActivity extends ActionBarActivity {
 
 	WebView webview;
+	DataManager dataManager = DataManager.getInstance();
 	
 	// 响应
     private HttpResponse mHttpResponse;
@@ -44,7 +46,7 @@ public class CreateOrderActivity extends ActionBarActivity {
         //start();
         webview = new WebView(this); 
         webview.getSettings().setJavaScriptEnabled(true); 
-        webview.loadUrl(NetDataManager.getBaseURL() + "/meidiserver/user/order.jsp");
+        webview.loadUrl(NetDataManager.getBaseURL() + "/meidiserver/androidSupport/order.jsp" + (String)dataManager.get("urlParam"));
         setContentView(webview);
     }
 
