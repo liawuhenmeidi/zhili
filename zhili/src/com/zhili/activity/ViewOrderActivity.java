@@ -1,26 +1,32 @@
 package com.zhili.activity;
 
-import android.os.Bundle;
-import android.os.Looper;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarActivity;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import org.apache.http.HttpEntity;
+import org.apache.http.HttpResponse;
 
-import com.zhili.R;
-import com.zhili.manager.UpdateManager;
+import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.webkit.WebView;
+
+import com.zhili.manager.NetDataManager;
 
 public class ViewOrderActivity extends ActionBarActivity {
 
+	WebView webview;
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        //RatingBar
-        setContentView(R.layout.mainconsole);
 
+        //setContentView(R.layout.createorder);
+        //webview = (WebView)findViewById(R.id.createorderactivity_webview);
         
+        //start();
+        webview = new WebView(this); 
+        webview.getSettings().setJavaScriptEnabled(true); 
+        webview.loadUrl(NetDataManager.getBaseURL() + "/meidiserver/user/serch_list.jsp");
+        setContentView(webview);
     }
+
+    
    
 }

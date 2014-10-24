@@ -20,6 +20,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
@@ -38,8 +39,8 @@ public class UpdateManager {
 	 private HashMap<String, String> mHashMap; /* 保存读取的网络信息 */
 	 private Dialog noticeDialog;// 提示有软件更新的对话框
 	 private Dialog downloadDialog;// 下载对话框
-	 private static final String savePath = "/sdcard/updatedemo/";// 保存apk的文件夹
-	 private static final String saveFileName = savePath + "UpdateDemoRelease.apk";
+	 private static String savePath = Environment.getExternalStorageDirectory().getPath() + "/zhili/update";// 保存apk的文件夹
+	 private static String saveFileName = savePath + "/" + "UpdateDemoRelease.apk";
 	 // 进度条与通知UI刷新的handler和msg常量 
 	 private ProgressBar mProgress;
 	 private static final int DOWN_UPDATE = 1;
@@ -209,13 +210,14 @@ public class UpdateManager {
 			  URL url;
 			  try {
 				    url = new URL(mHashMap.get("url"));
+				    saveFileName = mHashMap.get("name");
 				    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 				    conn.connect();
 				    int length = conn.getContentLength();
 				    InputStream ins = conn.getInputStream();
 				    File file = new File(savePath);
 				    if (!file.exists()) {
-				     file.mkdir();
+				     file.mkdirs();
 				    }
 				    String apkFile = saveFileName;
 				    File ApkFile = new File(apkFile);

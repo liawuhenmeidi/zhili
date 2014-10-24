@@ -17,7 +17,7 @@ import android.os.Looper;
 
 public class NetDataManager {
 	
-	String baseURL = "http://203.195.223.16:8080/meidi/servlet";
+	static String baseURL = "http://203.195.223.16:8080/meidi";
 	
 	private static NetDataManager ndm ; 
     
@@ -26,6 +26,10 @@ public class NetDataManager {
 			ndm = new NetDataManager();
 		}
 		return ndm;
+	}
+	
+	public static String getBaseURL(){
+		return baseURL;
 	}
 	
 	//发送登录请求
@@ -100,7 +104,7 @@ public class NetDataManager {
 //			params.setParameter("password", password);
 			
 	        // 生成一个请求对象
-	        HttpGet httpGet = new HttpGet(baseURL+"/LoginServlet" + "?username=" + username +"&password="+password);
+	        HttpGet httpGet = new HttpGet(baseURL+"/servlet/LoginServlet" + "?username=" + username +"&password="+password);
 
 	        // 下面使用Http客户端发送请求，并获取响应内容
 

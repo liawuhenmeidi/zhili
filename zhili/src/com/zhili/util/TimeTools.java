@@ -1,10 +1,12 @@
 package com.zhili.util;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class TimeTools {
 	
 	private static long startTimeMisllis = 0;
+	private static SimpleDateFormat sdf = new SimpleDateFormat();
 	
 	public static void startClock(){
 		startTimeMisllis = getCurrentTimeMillis();
@@ -21,5 +23,10 @@ public class TimeTools {
 	
 	public static long getCurrentTimeMillis(){
 		return System.currentTimeMillis();
+	}
+	
+	public static SimpleDateFormat getSimpleFormatForFileName(){
+		sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+		return sdf;
 	}
 }

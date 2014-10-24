@@ -28,6 +28,10 @@
     
     <!-- SigninActivity -->
     <string name="signinactivity_activityname">上班签到</string>
+    <string name="signinactivity_address">当前地址 :</string>
+    <string name="signinactivity_photobutton">点击拍照</string>
+    <string name="signinactivity_comment">请填写摘要</string>
+    <string name="signinactivity_commit">提交</string>
     
 
 </resources>

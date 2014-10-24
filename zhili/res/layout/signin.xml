@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/general_background"
+    tools:context="com.zhili.activity.LoginActivity"
+    tools:ignore="MergeRootFrame" >
+    
+    <com.baidu.mapapi.map.MapView  
+    android:id="@+id/signinactivity_map"  
+    android:layout_width="fill_parent"  
+    android:layout_height="90dp"  
+    android:clickable="true" />
+
+    <TextView
+        android:id="@+id/signinactivity_address"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/signinactivity_map"
+        android:layout_below="@+id/signinactivity_map"
+        android:layout_marginTop="5dp" 
+        android:text="@string/signinactivity_address"
+        />
+    
+     <TextView
+        android:id="@+id/signinactivity_photobutton"
+        android:background="@color/signinactivity_background"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/signinactivity_address"
+        android:layout_below="@+id/signinactivity_address"
+        android:layout_marginTop="5dp" 
+        android:text="@string/signinactivity_photobutton"
+        />
+     
+     <ImageView 
+        android:id="@+id/signinactivity_photoresult"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/signinactivity_photobutton"
+        android:layout_below="@+id/signinactivity_photobutton"
+        android:layout_marginTop="5dp" 
+         />
+     
+      <EditText
+        android:id="@+id/signinactivity_comment"
+        android:background="@color/signinactivity_background"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/signinactivity_photobutton"
+        android:layout_below="@+id/signinactivity_photoresult"
+        android:layout_marginTop="5dp" 
+        android:hint="@string/signinactivity_comment"
+        />
+      
+      <Button
+        android:id="@+id/signinactivity_commit"
+        android:background="@color/signinactivity_background"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignLeft="@+id/signinactivity_comment"
+        android:layout_below="@+id/signinactivity_comment"
+        android:layout_marginTop="5dp" 
+        android:text="@string/signinactivity_commit"
+        />
+    
+</RelativeLayout>
+

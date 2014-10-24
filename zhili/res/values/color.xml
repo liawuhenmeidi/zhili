@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- general -->
+    <color name="general_background">#F0F8FF</color>
     
     <!-- loginactivity -->
     <color name="loginactivity_background">#FFFACD</color>
     
     <!-- mainconsoleactivity -->
     <color name="mainconsoleactivity_background">#EEEED1</color>
+    
+    <!-- signinactivity -->
+    <color name="signinactivity_background">#E8E8E8</color>
     
 
 </resources>
