@@ -61,7 +61,7 @@ public class MainConsoleActivity extends ActionBarActivity {
 			}
 		});
         
-        viewOrder.setOnClickListener(new OnClickListener() {
+        orderSystem.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
