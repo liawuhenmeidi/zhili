@@ -1,6 +1,7 @@
 package com.zhili.activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Looper;
 import android.support.v4.app.Fragment;
@@ -19,6 +20,7 @@ public class MainConsoleActivity extends ActionBarActivity {
 	TextView viewOrder;
 	TextView createOrder;
 	TextView signin;
+	TextView orderSystem;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +32,7 @@ public class MainConsoleActivity extends ActionBarActivity {
         viewOrder = (TextView)findViewById(R.id.mainconsoleactivity_vieworder);
         createOrder = (TextView)findViewById(R.id.mainconsoleactivity_createorder);
         signin = (TextView)findViewById(R.id.mainconsoleactivity_signin);
+        orderSystem = (TextView)findViewById(R.id.mainconsoleactivity_ordersystem);
         
         viewOrder.setOnClickListener(new OnClickListener() {
 			
@@ -55,6 +58,16 @@ public class MainConsoleActivity extends ActionBarActivity {
 			public void onClick(View v) {
 				Intent i = new Intent(MainConsoleActivity.this,SigninActivity.class);
 				startActivity(i);
+			}
+		});
+        
+        viewOrder.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Uri uri = Uri.parse("http://liaowuhentest.gotoip55.com/meidiserver/user/welcom.jsp");
+				Intent intent = new Intent(Intent.ACTION_VIEW,uri);
+				startActivity(intent);
 			}
 		});
     }

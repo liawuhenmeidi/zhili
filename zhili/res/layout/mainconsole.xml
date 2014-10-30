@@ -46,6 +46,20 @@
          android:text="@string/mainconsoleactivity_createorder" 
          android:textSize= "25sp"
          />
+     
+     <TextView
+         android:id="@+id/mainconsoleactivity_ordersystem"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignLeft="@+id/mainconsoleactivity_createorder"
+         android:layout_alignRight="@+id/mainconsoleactivity_createorder"
+         android:layout_below="@+id/mainconsoleactivity_createorder"
+         android:layout_marginTop="40dp"
+         android:background="@drawable/setbar_bg"
+         android:gravity="center"
+         android:text="@string/mainconsoleactivity_ordersystem" 
+         android:textSize= "25sp"
+         />
 
     
 </RelativeLayout>
