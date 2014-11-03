@@ -34,5 +34,12 @@
     <string name="signinactivity_comment">请填写摘要</string>
     <string name="signinactivity_commit">提交</string>
     
+	<!-- OrderSystemActivity -->
+	<string name="ordersystemactivity_activityname">上班签到</string>
+	<string name="ordersystemactivity_home">主页</string>
+	<string name="ordersystemactivity_back">后退</string>
+	<string name="ordersystemactivity_forword">前进</string>
+	<string name="ordersystemactivity_exit">退出</string>
 
+	
 </resources>

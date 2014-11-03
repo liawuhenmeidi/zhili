@@ -1,0 +1,63 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+   	android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <ScrollView 
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+		<LinearLayout 
+		    android:orientation="vertical"
+		    android:layout_width="fill_parent"
+	        android:layout_height="wrap_content">
+		    <LinearLayout
+		        android:id="@+id/layout" 
+		        android:orientation="horizontal"
+		        android:layout_width="fill_parent"
+		        android:layout_height="wrap_content"
+		        android:layout_margin="@dimen/activity_vertical_margin">
+		        
+		    </LinearLayout>
+	
+			<WebView
+				android:id="@+id/web"
+				android:layout_width="fill_parent"
+				android:layout_height="fill_parent"/>
+		</LinearLayout>
+	</ScrollView>
+	<LinearLayout
+	   android:id="@+id/ll_btn"
+       android:orientation="horizontal"
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:gravity="center_horizontal">
+       <Button 
+           android:id="@+id/btn_home"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/ordersystemactivity_home"/>
+       <Button 
+           android:id="@+id/btn_left"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/ordersystemactivity_back"/>
+       <Button 
+           android:id="@+id/btn_right"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/ordersystemactivity_forword"/>
+       <Button 
+           android:id="@+id/btn_exit"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:text="@string/ordersystemactivity_exit"/>
+	</LinearLayout>
+
+</LinearLayout>

@@ -40,7 +40,7 @@ public class UpdateManager {
 	 private Dialog noticeDialog;// 提示有软件更新的对话框
 	 private Dialog downloadDialog;// 下载对话框
 	 private static String savePath = Environment.getExternalStorageDirectory().getPath() + "/zhili/update";// 保存apk的文件夹
-	 private static String saveFileName = savePath + "/" + "UpdateDemoRelease.apk";
+	 private static String saveFileName = savePath + "/" + "zhili.apk";
 	 // 进度条与通知UI刷新的handler和msg常量 
 	 private ProgressBar mProgress;
 	 private static final int DOWN_UPDATE = 1;
@@ -210,7 +210,7 @@ public class UpdateManager {
 			  URL url;
 			  try {
 				    url = new URL(mHashMap.get("url"));
-				    saveFileName = mHashMap.get("name");
+				    saveFileName = savePath + "/" + mHashMap.get("name");
 				    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 				    conn.connect();
 				    int length = conn.getContentLength();

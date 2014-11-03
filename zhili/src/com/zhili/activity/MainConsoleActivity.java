@@ -13,14 +13,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.zhili.R;
+import com.zhili.manager.DataManager;
 import com.zhili.manager.UpdateManager;
 
 public class MainConsoleActivity extends ActionBarActivity {
 	
-	TextView viewOrder;
-	TextView createOrder;
+//	TextView viewOrder;
+//	TextView createOrder;
 	TextView signin;
 	TextView orderSystem;
+
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,28 +31,28 @@ public class MainConsoleActivity extends ActionBarActivity {
         //RatingBar
         setContentView(R.layout.mainconsole);
         
-        viewOrder = (TextView)findViewById(R.id.mainconsoleactivity_vieworder);
-        createOrder = (TextView)findViewById(R.id.mainconsoleactivity_createorder);
+//        viewOrder = (TextView)findViewById(R.id.mainconsoleactivity_vieworder);
+//        createOrder = (TextView)findViewById(R.id.mainconsoleactivity_createorder);
         signin = (TextView)findViewById(R.id.mainconsoleactivity_signin);
         orderSystem = (TextView)findViewById(R.id.mainconsoleactivity_ordersystem);
-        
-        viewOrder.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(MainConsoleActivity.this,ViewOrderActivity.class);
-				startActivity(i);
-			}
-		});
-        
-        createOrder.setOnClickListener(new OnClickListener() {
-			
-			@Override
-			public void onClick(View v) {
-				Intent i = new Intent(MainConsoleActivity.this,CreateOrderActivity.class);
-				startActivity(i);
-			}
-		});
+//        
+//        viewOrder.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				Intent i = new Intent(MainConsoleActivity.this,ViewOrderActivity.class);
+//				startActivity(i);
+//			}
+//		});
+//        
+//        createOrder.setOnClickListener(new OnClickListener() {
+//			
+//			@Override
+//			public void onClick(View v) {
+//				Intent i = new Intent(MainConsoleActivity.this,CreateOrderActivity.class);
+//				startActivity(i);
+//			}
+//		});
         
         signin.setOnClickListener(new OnClickListener() {
 			
@@ -65,9 +67,8 @@ public class MainConsoleActivity extends ActionBarActivity {
 			
 			@Override
 			public void onClick(View v) {
-				Uri uri = Uri.parse("http://liaowuhentest.gotoip55.com/meidiserver/user/welcom.jsp");
-				Intent intent = new Intent(Intent.ACTION_VIEW,uri);
-				startActivity(intent);
+				Intent i = new Intent(MainConsoleActivity.this,OrderSystemActivity.class);
+				startActivity(i);
 			}
 		});
     }
