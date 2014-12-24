@@ -2,13 +2,14 @@
 <resources>
 
     
-    <string name="app_name">zhili</string>
+    <string name="app_name">智历</string>
     <string name="action_settings">Settings</string>
     
     <!-- loginActivity -->
     <string name="loginactivity_activityname">登录</string>
     <string name="loginactivity_username">用户名</string>
     <string name="loginactivity_password">密码</string>
+     <string name="loginactivity_code">公司编码</string>
     <string name="loginactivity_confirm">确认</string>
     
     <!-- mainConsoleActivity -->

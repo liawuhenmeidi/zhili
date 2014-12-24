@@ -94,7 +94,7 @@ public class UpdateManager {
         // 把version.xml放到网络上，然后获取文件信息
         //InputStream inStream = ParseXmlService.class.getClassLoader().getResourceAsStream("http://203.195.223.16:8080/zhili/zhiliMetaData.xml");
         try {
-			URL url = new URL(DataManager.getBaseURL() + "zhili/zhiliMetaData.xml");
+			URL url = new URL(DataManager.getUpdateXMLURL());
 			InputStream is = url.openStream();  
 			// 解析XML文件。 由于XML文件比较小，因此使用DOM方式进行解析
 	        ParseXmlService service = new ParseXmlService();

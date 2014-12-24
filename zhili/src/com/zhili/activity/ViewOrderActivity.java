@@ -25,7 +25,7 @@ public class ViewOrderActivity extends ActionBarActivity {
         //start();
         webview = new WebView(this); 
         webview.getSettings().setJavaScriptEnabled(true); 
-        webview.loadUrl(NetDataManager.getBaseURL() + "/meidiserver/androidSupport/serch_list.jsp" + (String)dataManager.get("urlParam"));
+        webview.loadUrl(DataManager.getBaseURL() + "meidiserver/androidSupport/serch_list.jsp" + (String)dataManager.get("urlParam"));
         setContentView(webview);
     }
 

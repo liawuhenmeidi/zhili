@@ -31,13 +31,24 @@
         android:hint="@string/loginactivity_password"
         
         />
+    <EditText 
+        android:id="@+id/loginactivity_code"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_alignRight="@id/loginactivity_password"
+        android:layout_alignLeft="@id/loginactivity_password"
+        android:layout_below="@id/loginactivity_password"
+        android:hint="@string/loginactivity_code"
+        
+        />
     
     <Button 
         android:id="@+id/loginactivity_confirm"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:gravity="center"
-        android:layout_below="@id/loginactivity_password"
+        android:layout_below="@id/loginactivity_code"
         android:layout_centerHorizontal="true"
         android:text="@string/loginactivity_confirm"
         />

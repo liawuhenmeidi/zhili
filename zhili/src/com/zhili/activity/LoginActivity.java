@@ -21,6 +21,7 @@ public class LoginActivity extends ActionBarActivity {
 	Button confirmButton;
 	EditText usernameTextView;
 	EditText passwordTextView;
+	EditText codeTextView;
 	
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ public class LoginActivity extends ActionBarActivity {
         confirmButton = (Button)findViewById(R.id.loginactivity_confirm);
         usernameTextView = (EditText)findViewById(R.id.loginactivity_username);
         passwordTextView = (EditText)findViewById(R.id.loginactivity_password);
+        codeTextView = (EditText)findViewById(R.id.loginactivity_code);
         
         
         confirmButton.setOnClickListener(new OnClickListener() {
@@ -41,16 +43,26 @@ public class LoginActivity extends ActionBarActivity {
 
 				dataManager.put("username",usernameTextView.getText().toString());
 				dataManager.put("password",passwordTextView.getText().toString());
+				dataManager.put("code",codeTextView.getText().toString());
 				dataManager.put("urlParam", "?username="+usernameTextView.getText().toString()+"&password="+passwordTextView.getText().toString());
-				boolean login = NetDataManager.getStaticInstance().sendLoginRequest((String)dataManager.get("username"),(String)dataManager.get("password"));
-				if(login){
-					Intent i = new Intent(LoginActivity.this,MainConsoleActivity.class);
-					startActivity(i);
+				boolean getURL = NetDataManager.getStaticInstance().sendBaseURLRequest((String)dataManager.get("code"));
+				
+				if(getURL){
+					boolean login = NetDataManager.getStaticInstance().sendLoginRequest((String)dataManager.get("username"),(String)dataManager.get("password"));
+					if(login){
+						Intent i = new Intent(LoginActivity.this,MainConsoleActivity.class);
+						startActivity(i);
+					}else{
+						Toast.makeText(getApplicationContext(), "帐号密码有误，请重新输入",Toast.LENGTH_SHORT).show();
+						//usernameTextView.setText("");
+						passwordTextView.setText("");
+					}
 				}else{
-					Toast.makeText(getApplicationContext(), "帐号密码有误，请重新输入",Toast.LENGTH_SHORT).show();
+					Toast.makeText(getApplicationContext(), "公司编码有误，请重新输入",Toast.LENGTH_SHORT).show();
 					//usernameTextView.setText("");
-					passwordTextView.setText("");
+					codeTextView.setText("");
 				}
+				
 				
 			}
 		});
