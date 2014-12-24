@@ -34,7 +34,7 @@ public class OrderSystemActivity extends Activity implements OnClickListener{
 	
 	DataManager dataManager = DataManager.getInstance();
 
-	private String homeStr = "http://liaowuhentest.gotoip55.com/meidiserver/dengluN.jsp" + dataManager.get("urlParam") + "&action=login";
+	private String homeStr = dataManager.getBaseURL() + "/meidiserver/dengluN.jsp" + dataManager.get("urlParam") + "&action=login";
 	
 	//-------------------------------------------
 	/**

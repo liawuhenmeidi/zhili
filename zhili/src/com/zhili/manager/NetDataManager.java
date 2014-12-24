@@ -17,7 +17,9 @@ import android.os.Looper;
 
 public class NetDataManager {
 	
-	static String baseURL = "http://203.195.223.16:8080/meidi";
+	DataManager dataManager = DataManager.getInstance();
+	
+	static String baseURL = DataManager.getBaseURL();
 	
 	private static NetDataManager ndm ; 
     

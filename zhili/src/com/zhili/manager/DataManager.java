@@ -5,8 +5,13 @@ import java.util.HashMap;
 public class DataManager {
 	private static HashMap<String, Object> map = new HashMap<String, Object>();  
     private static DataManager dm = null;
+    public static String baseURL = "http://liaowuhentest.gotoip55.com/";
     
-    public static DataManager getInstance(){
+    public static String getBaseURL() {
+		return baseURL;
+	}
+    
+	public static DataManager getInstance(){
     	if (dm == null){
     		dm = new DataManager();
     	}

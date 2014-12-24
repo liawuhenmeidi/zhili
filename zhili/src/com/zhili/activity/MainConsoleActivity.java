@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.zhili.R;
 import com.zhili.manager.DataManager;
@@ -56,10 +57,15 @@ public class MainConsoleActivity extends ActionBarActivity {
         
         signin.setOnClickListener(new OnClickListener() {
 			
-			@Override
+//			@Override
+//			public void onClick(View v) {
+//				Intent i = new Intent(MainConsoleActivity.this,SigninActivity.class);
+//				startActivity(i);
+//			}
+        	
+        	@Override
 			public void onClick(View v) {
-				Intent i = new Intent(MainConsoleActivity.this,SigninActivity.class);
-				startActivity(i);
+				Toast.makeText(getApplicationContext(), "签到系统建设中，敬请期待",Toast.LENGTH_SHORT).show();
 			}
 		});
         
