@@ -259,8 +259,8 @@ int id always 0x7f05000b
 int id beginning 0x7f050011
 int id btn_exit 0x7f05004a
 int id btn_home 0x7f050047
-int id btn_left 0x7f050048
-int id btn_right 0x7f050049
+int id btn_zoomin 0x7f050048
+int id btn_zoomout 0x7f050049
 int id checkbox 0x7f05002d
 int id collapseActionView 0x7f05000d
 int id container 0x7f05003c
@@ -390,10 +390,10 @@ int string mainconsoleactivity_signin 0x7f0a0015
 int string mainconsoleactivity_vieworder 0x7f0a0017
 int string orderdetailactivity_activityname 0x7f0a001a
 int string ordersystemactivity_activityname 0x7f0a0021
-int string ordersystemactivity_back 0x7f0a0023
 int string ordersystemactivity_exit 0x7f0a0025
-int string ordersystemactivity_forword 0x7f0a0024
 int string ordersystemactivity_home 0x7f0a0022
+int string ordersystemactivity_zoomin 0x7f0a0023
+int string ordersystemactivity_zoomout 0x7f0a0024
 int string signinactivity_activityname 0x7f0a001c
 int string signinactivity_address 0x7f0a001d
 int string signinactivity_comment 0x7f0a001f

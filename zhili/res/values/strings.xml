@@ -38,8 +38,8 @@
 	<!-- OrderSystemActivity -->
 	<string name="ordersystemactivity_activityname">上班签到</string>
 	<string name="ordersystemactivity_home">主页</string>
-	<string name="ordersystemactivity_back">后退</string>
-	<string name="ordersystemactivity_forword">前进</string>
+	<string name="ordersystemactivity_zoomin">放大</string>
+	<string name="ordersystemactivity_zoomout">缩小</string>
 	<string name="ordersystemactivity_exit">退出</string>
 
 	

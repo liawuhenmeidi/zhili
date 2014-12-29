@@ -41,17 +41,17 @@
            android:layout_weight="1"
            android:text="@string/ordersystemactivity_home"/>
        <Button 
-           android:id="@+id/btn_left"
+           android:id="@+id/btn_zoomin"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_weight="1"
-           android:text="@string/ordersystemactivity_back"/>
+           android:text="@string/ordersystemactivity_zoomin"/>
        <Button 
-           android:id="@+id/btn_right"
+           android:id="@+id/btn_zoomout"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
            android:layout_weight="1"
-           android:text="@string/ordersystemactivity_forword"/>
+           android:text="@string/ordersystemactivity_zoomout"/>
        <Button 
            android:id="@+id/btn_exit"
            android:layout_width="wrap_content"

@@ -28,7 +28,7 @@ public class OrderSystemActivity extends Activity implements OnClickListener{
 	
 	private WebView web;
 	
-	private Button btn_home,btn_left,btn_right,btn_exit;
+	private Button btn_home,btn_zoomin,btn_zoomout,btn_exit;
 	
 	private boolean isExit;
 	
@@ -51,23 +51,25 @@ public class OrderSystemActivity extends Activity implements OnClickListener{
 		ws.setJavaScriptEnabled(true);
 		ws.setJavaScriptCanOpenWindowsAutomatically(true);
 		ws.setSaveFormData(false);
-		ws.setSavePassword(false);
 		ws.setAppCacheEnabled(true);
 		ws.setAppCacheMaxSize(10240);
+
 //			ws.setCacheMode(WebSettings.LOAD_NO_CACHE);
 		//是否允许缩放
-//			ws.setBuiltInZoomControls(true);
+		ws.setSupportZoom(true);
+		ws.setBuiltInZoomControls(true);
+		
 		web.setWebViewClient(wvc);
 		web.setWebChromeClient(wcc);
 		
 		btn_home = (Button)findViewById(R.id.btn_home);
-		btn_left = (Button)findViewById(R.id.btn_left);
-		btn_right = (Button)findViewById(R.id.btn_right);
+		btn_zoomin = (Button)findViewById(R.id.btn_zoomin);
+		btn_zoomout = (Button)findViewById(R.id.btn_zoomout);
 		btn_exit = (Button)findViewById(R.id.btn_exit);
 		
 		btn_home.setOnClickListener(this);
-		btn_left.setOnClickListener(this);
-		btn_right.setOnClickListener(this);
+		btn_zoomin.setOnClickListener(this);
+		btn_zoomout.setOnClickListener(this);
 		btn_exit.setOnClickListener(this);
 		
 		web.setOnTouchListener(touchListener);
@@ -145,26 +147,28 @@ public class OrderSystemActivity extends Activity implements OnClickListener{
     
     //-------------------------------------------
     /**
-     * 后退
+     * 缩
      */
-    private void goBack(){
-    	if(web.canGoBack()){
-    		web.goBack();
-    	}else{
-    		Toast.makeText(this, "已经是第一页",Toast.LENGTH_SHORT).show();
-    	}
+    private void zoomIn(){
+//    	if(web.canGoBack()){
+//    		web.goBack();
+//    	}else{
+//    		Toast.makeText(this, "已经是第一页",Toast.LENGTH_SHORT).show();
+//    	}
+    	web.zoomIn();
     }
     
     //-------------------------------------------
     /**
-     * 前进
+     * 放
      */
-    private void goForward(){
-    	if(web.canGoForward()){
-    		web.goForward();
-    	}else{
-    		Toast.makeText(this, "已经是最后一页",Toast.LENGTH_SHORT).show();
-    	}
+    private void zoomOut(){
+//    	if(web.canGoForward()){
+//    		web.goForward();
+//    	}else{
+//    		Toast.makeText(this, "已经是最后一页",Toast.LENGTH_SHORT).show();
+//    	}
+    	web.zoomOut();
     }
     //-------------------------------------------
     /**
@@ -225,14 +229,14 @@ public class OrderSystemActivity extends Activity implements OnClickListener{
 		switch (v.getId()) {
 		case R.id.btn_home:
 			
-
+			//conn("www.taobao.com");
 			conn(homeStr);
 			break;
-		case R.id.btn_left:
-			goBack();
+		case R.id.btn_zoomin:
+			zoomIn();
 			break;
-		case R.id.btn_right:
-			goForward();
+		case R.id.btn_zoomout:
+			zoomOut();
 			break;
 		case R.id.btn_exit:
 			exit();
