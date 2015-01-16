@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+   	 	xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"
+      	android:layout_width="fill_parent"
+      	android:layout_height="wrap_content" >
+     <TextView  android:id="@+id/register_link"
+         android:text="@string/loginactivity_tips"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_marginLeft="15dp"
+         android:textColor="#888"
+         android:textColorLink="#FF0066CC" />
+
+    <TextView
+        android:id="@+id/copy_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/loginactivity_copyRight"
+        android:textColor="#888"
+        android:textColorLink="#FF0066CC" />
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/copy_right"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/logo" />
+
+  	</RelativeLayout>

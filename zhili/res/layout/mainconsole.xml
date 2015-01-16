@@ -1,36 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="30dp"
-    android:background="@color/mainconsoleactivity_background"
-    tools:context="com.zhili.activity.LoginActivity"
-    tools:ignore="MergeRootFrame" >
-    
-    <TextView
-        android:id="@+id/mainconsoleactivity_signin"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:background="@drawable/setbar_bg"
-        android:gravity="center"
-        android:text="@string/mainconsoleactivity_signin"
-        android:textSize= "25sp" />
 
-     <TextView
-         android:id="@+id/mainconsoleactivity_ordersystem"
-         android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         android:layout_alignLeft="@+id/mainconsoleactivity_signin"
-         android:layout_alignRight="@+id/mainconsoleactivity_signin"
-         android:layout_below="@+id/mainconsoleactivity_signin"
-         android:layout_marginTop="50dp"
-         android:background="@drawable/setbar_bg"
-         android:gravity="center"
-         android:text="@string/mainconsoleactivity_ordersystem"
-         android:textSize="25sp" />
+<LinearLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:tools="http://schemas.android.com/tools"
+ android:orientation="vertical"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:background="@drawable/background_login">
     
-</RelativeLayout>
+    <RelativeLayout 
+    android:id="@+id/mainconsole_div"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:padding="15dip"
+    android:layout_margin="15dip"
+    android:background="@drawable/background_login_div"
+    tools:context="com.zhili.activity.MainConsoleActivity"
+	tools:ignore="MergeRootFrame" >
+    
+	    <TextView
+	        android:id="@+id/mainconsoleactivity_signin"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentTop="true"
+	        android:layout_centerHorizontal="true"
+	        android:background="@drawable/button"
+	        android:textColor="@color/white"
+	        android:gravity="center"
+	        android:text="@string/mainconsoleactivity_signin"
+	        android:textSize= "25sp" />
+	
+	     <TextView
+	         android:id="@+id/mainconsoleactivity_ordersystem"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:layout_alignLeft="@+id/mainconsoleactivity_signin"
+	         android:layout_alignRight="@+id/mainconsoleactivity_signin"
+	         android:layout_below="@+id/mainconsoleactivity_signin"
+	         android:layout_marginTop="50dp"
+	         android:background="@drawable/button"
+	         android:textColor="@color/white"
+	         android:gravity="center"
+	         android:text="@string/mainconsoleactivity_ordersystem"
+	         android:textSize="25sp" />
+    
+	</RelativeLayout>
+	
+    <include layout="@layout/footer"/>
+</LinearLayout>
+
 

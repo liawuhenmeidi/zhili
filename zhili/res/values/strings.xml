@@ -9,8 +9,10 @@
     <string name="loginactivity_activityname">登录</string>
     <string name="loginactivity_username">用户名</string>
     <string name="loginactivity_password">密码</string>
-     <string name="loginactivity_code">公司编码</string>
+    <string name="loginactivity_code">公司编码</string>
     <string name="loginactivity_confirm">确认</string>
+    <string name="loginactivity_tips"></string>
+    <string name="loginactivity_copyRight">CopyRight 天津市智历宝软件科技有限公司</string>
     
     <!-- mainConsoleActivity -->
     <string name="mainconsoleactivity_activityname">主面板</string>

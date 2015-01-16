@@ -1,59 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<LinearLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="30dp"
-    android:background="@color/loginactivity_background"
-    tools:context="com.zhili.activity.LoginActivity"
-    tools:ignore="MergeRootFrame" >
-    
-    <EditText
-        android:id="@+id/loginactivity_username"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
-        android:gravity="center"
-        android:hint="@string/loginactivity_username" >
-    </EditText>
-    
-    <EditText 
-        android:id="@+id/loginactivity_password"
-        android:inputType="textPassword"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_alignRight="@id/loginactivity_username"
-        android:layout_alignLeft="@id/loginactivity_username"
-        android:layout_below="@id/loginactivity_username"
-        android:hint="@string/loginactivity_password"
-        
-        />
-    <EditText 
-        android:id="@+id/loginactivity_code"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_alignRight="@id/loginactivity_password"
-        android:layout_alignLeft="@id/loginactivity_password"
-        android:layout_below="@id/loginactivity_password"
-        android:hint="@string/loginactivity_code"
-        
-        />
-    
-    <Button 
-        android:id="@+id/loginactivity_confirm"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:gravity="center"
-        android:layout_below="@id/loginactivity_code"
-        android:layout_centerHorizontal="true"
-        android:text="@string/loginactivity_confirm"
-        />
+ android:orientation="vertical"
+ android:layout_width="fill_parent"
+ android:layout_height="fill_parent"
+ android:background="@drawable/background_login">
+	<RelativeLayout 
+	    android:id="@+id/login_div"
+	  	android:layout_width="fill_parent"
+	  	android:layout_height="wrap_content"
+	  	android:padding="15dip"        
+	    android:layout_margin="15dip" 
+	    android:background="@drawable/background_login_div"
+	    tools:context="com.zhili.activity.LoginActivity"
+	    tools:ignore="MergeRootFrame" >
+	    
+	    <TextView 
+    		android:id="@+id/loginactivity_username_text"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_alignParentTop="true"
+    		android:layout_marginTop="5dp"
+    		android:text="@string/loginactivity_username"
+			/>
+	    <EditText
+	        android:id="@+id/loginactivity_username"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:inputType="text"
+	        android:layout_below="@+id/loginactivity_username_text"
+	        android:layout_centerHorizontal="true"
+	        android:singleLine="true"
+	        android:gravity="center"
+	        android:hint="@string/loginactivity_username" >
+	    </EditText>
+	    
+	    <TextView 
+	      	android:id="@+id/loginactivity_password_text"
+	      	android:layout_width="wrap_content"
+	      	android:layout_height="wrap_content"
+	      	android:layout_below="@+id/loginactivity_username"
+	      	android:layout_marginTop="3dp"
+	      	android:text="@string/loginactivity_password"
+			/>
+	    
+	    <EditText 
+	        android:id="@+id/loginactivity_password"
+	        android:inputType="textPassword"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_alignRight="@+id/loginactivity_username"
+	         android:layout_alignLeft="@+id/loginactivity_username"
+	        android:gravity="center"
+      		android:singleLine="true"
+	        android:layout_below="@+id/loginactivity_password_text"
+	        android:hint="@string/loginactivity_password"
+	        
+	        />
+	    
+	    <TextView 
+	      	android:id="@+id/loginactivity_code_text"
+	      	android:layout_width="wrap_content"
+	      	android:layout_height="wrap_content"
+	      	android:layout_below="@+id/loginactivity_password"
+	      	android:layout_marginTop="3dp"
+	      	android:text="@string/loginactivity_code"
+			/>
+	    
+	    <EditText 
+	        android:id="@+id/loginactivity_code"
+	        android:layout_height="wrap_content"
+	        android:layout_width="wrap_content"
+	        android:layout_alignRight="@+id/loginactivity_username"
+	        android:layout_alignLeft="@+id/loginactivity_username"
+	        android:gravity="center"
+      		android:singleLine="true"
+	        android:layout_below="@+id/loginactivity_code_text"
+	        android:hint="@string/loginactivity_code"
+	        
+	        />
 
-    
-    
-</RelativeLayout>
+	    <Button
+	        android:id="@+id/loginactivity_confirm"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignRight="@+id/loginactivity_username"
+	        android:layout_below="@+id/loginactivity_code"
+	        android:layout_centerHorizontal="true"
+	        android:background="@drawable/button"
+	        android:gravity="center"
+	        android:text="@string/loginactivity_confirm"
+	        android:textColor="@color/white"
+	        android:textSize="20sp"
+	        android:padding="10sp"
+	         />
+	    
+	</RelativeLayout>
+	
+	<include layout="@layout/footer"/>"
 
+</LinearLayout>
